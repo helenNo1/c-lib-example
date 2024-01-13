@@ -12,7 +12,6 @@ ifneq ($(KERNELRELEASE),)
 #CFG_FLAGS += -O2  -I./
 #EXTRA_CFLAGS  += $(C_FLAGS) $(CFG_INC) $(CFG_INC)
 
-CC := x86_64-linux-gnu-gcc-11
 
 ccflags-y := -w
 
@@ -24,11 +23,14 @@ KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 
 PWD := $(shell pwd)
 
+CC := x86_64-linux-gnu-gcc-11
+EXTRA_CFLAGS += -g
+
 modules:
-	make -C $(KERNELDIR) M=$(PWD) modules
+	make -C $(KERNELDIR) M=$(PWD) CC=$(CC) modules
 
 modules_install:
-	make -C $(KERNELDIR) M=$(PWD) modules_install
+	make -C $(KERNELDIR) M=$(PWD) CC=$(CC) modules_install
 
 
 

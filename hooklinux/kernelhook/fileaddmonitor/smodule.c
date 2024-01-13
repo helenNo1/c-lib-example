@@ -9,7 +9,7 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Your Name");
 MODULE_DESCRIPTION("File Addition Monitor Kernel Module");
 
-#define WATCH_PATH "/path/to/monitor" // Replace with the path you want to monitor
+#define WATCH_PATH "/tmp" // Replace with the path you want to monitor
 
 static struct fsnotify_group *group;
 
