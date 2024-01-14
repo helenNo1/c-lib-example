@@ -6,3 +6,5 @@ a.out
 *.order
 *.symvers
 *.mod.c
+*.der
+*.priv
