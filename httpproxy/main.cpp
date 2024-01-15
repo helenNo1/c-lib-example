@@ -69,7 +69,7 @@ void handle_client(int client_socket)
     struct sockaddr_in target_address;
     memset(&target_address, 0, sizeof(target_address));
     target_address.sin_family = AF_INET;
-    target_address.sin_port = htons(80);
+    target_address.sin_port = htons(8119);
     memcpy(&target_address.sin_addr, target_host->h_addr, target_host->h_length);
 
     int target_socket = socket(AF_INET, SOCK_STREAM, 0);
